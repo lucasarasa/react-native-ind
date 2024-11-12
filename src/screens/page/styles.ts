@@ -49,6 +49,15 @@ export const styles = StyleSheet.create({
     width: 15,
     height: 15,
   },
+  topPagIconsHeart: {
+    width: 15,
+    height: 15,
+  },
+  topPagIconsHeartRed: {
+    width: 15,
+    height: 15,
+    tintColor: 'red'
+  },
   bottomPag: {
     position: 'absolute',
     width: '100%',
