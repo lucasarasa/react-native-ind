@@ -1,30 +1,20 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
-import { styles } from './styles';
-// import CircleIcon from './CircleIcon.png';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { RootStackParamList } from './src/navigation/types';
+import { Home } from './src/screens/Home/Home';
+import { Page } from './src/screens/page/Page';
+// import { MyTabs } from './src/routes/MyTabs';
+
+const Stack = createStackNavigator<RootStackParamList>();
 
 export default function App () {
-  return <View style={styles.container}>
-    <Text style={styles.title}>
-      Skills
-    </Text>
-    <TouchableOpacity activeOpacity={0.7} style={styles.buttonSkill}>
-      {/* <Image source={CircleIcon} style={styles.image}/> */}
-      <Text style={styles.textSkill}>
-        Habilidade 1
-      </Text>
-    </TouchableOpacity>
-    <TouchableOpacity activeOpacity={0.7} style={styles.buttonSkill}>
-      {/* <Image source={CircleIcon} style={styles.image}/> */}
-      <Text style={styles.textSkill}>
-        Habilidade 2
-      </Text>
-    </TouchableOpacity>
-    <TouchableOpacity activeOpacity={0.7} style={styles.buttonSkill}>
-      {/* <Image source={CircleIcon} style={styles.image}/> */}
-      <Text style={styles.textSkill}>
-        Habilidade 3
-      </Text>
-    </TouchableOpacity>
-  </View>
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='Home'>
+        <Stack.Screen options={{headerShown: false}}  name='Home' component={Home}/>
+        <Stack.Screen options={{headerShown: false}} name='Page' component={Page}/>
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
 }
