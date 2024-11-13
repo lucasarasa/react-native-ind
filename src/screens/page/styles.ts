@@ -179,10 +179,10 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     // borderTopColor: 'black',
     // borderTopWidth: 1,
-    shadowColor: '#000',          // Cor da sombra
-    shadowOpacity: 0.5,           // Opacidade da sombra
-    shadowRadius: 1,             // Raio da sombra (para iOS)
-    elevation: 5,                  // Sombras para Android
+    shadowColor: '#000',
+    shadowOpacity: 0.5,
+    shadowRadius: 1,
+    elevation: 5,
     alignItems: 'center',
     paddingHorizontal: 24,
     // justifyContent: 'center',

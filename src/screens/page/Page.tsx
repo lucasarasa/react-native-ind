@@ -131,11 +131,11 @@ export const Page = () => {
                         <Text style={styles.cancelamentoText}>Cancelamento gratuito</Text>
                     </View>
                 </View>
-                <View style={styles.footerRight}>
+                <TouchableOpacity style={styles.footerRight}>
                     <Text style={styles.footerRightText}>
                         Reservar
                     </Text>
-                </View>
+                </TouchableOpacity>
             </View>
         </View>
         

@@ -34,11 +34,11 @@ export const Home = () => {
   };
 
   const handleFocus = () => {
-    setPlaceholder('');  // Limpa o placeholder quando o campo recebe foco
+    setPlaceholder('');
   };
 
   const handleBlur = () => {
-    setPlaceholder("Para onde?\nQualq... • Qualqu... • Hóspe...");  // Restaura o placeholder quando o campo perde foco
+    setPlaceholder("Para onde?\nQualq... • Qualqu... • Hóspe...");
   };
 
   return (
@@ -96,10 +96,7 @@ export const Home = () => {
           </View>
         </View>
         <TouchableOpacity onPress={navigateToAnotherPage}>
-          <ImageBackground
-            source={frentePraiaFoto}
-            style={styles.mainPageHomes}
-          >
+          <ImageBackground source={frentePraiaFoto} style={styles.mainPageHomes}>
             <View style={styles.mainPageHomesHeader}>
               <Text style={styles.textMainPagePreferHosp}>
                 Preferido dos hóspedes
@@ -116,65 +113,22 @@ export const Home = () => {
       <View style={styles.footer}>
         <TouchableOpacity onPress={() => setSelectedTab("Explorar")}>
           <View style={styles.footerBox}>
-            <Image
-              source={search}
-              style={
-                selectedTab === "Explorar"
-                  ? styles.footerSearchIconRed
-                  : styles.footerSearchIcon
-              }
-            />
-            <Text
-              style={
-                selectedTab === "Explorar"
-                  ? styles.footerTextRedColor
-                  : styles.footerText
-              }
-            >
-              Explorar
-            </Text>
+            <Image source={search} style={selectedTab === "Explorar" ? styles.footerSearchIconRed : styles.footerSearchIcon}/>
+            <Text style={selectedTab === "Explorar"? styles.footerTextRedColor : styles.footerText}>Explorar</Text>
           </View>
         </TouchableOpacity>
+
         <TouchableOpacity onPress={() => setSelectedTab("Favoritos")}>
           <View style={styles.footerBox}>
-            <Image
-              source={heart}
-              style={
-                selectedTab === "Favoritos"
-                  ? styles.footerHeartIconRed
-                  : styles.footerHeartIcon
-              }
-            />
-            <Text
-              style={
-                selectedTab === "Favoritos"
-                  ? styles.footerTextRedColor
-                  : styles.footerText
-              }
-            >
-              Favoritos
-            </Text>
+            <Image source={heart} style={selectedTab === "Favoritos" ? styles.footerHeartIconRed : styles.footerHeartIcon}/>
+            <Text style={selectedTab === "Favoritos" ? styles.footerTextRedColor : styles.footerText}>Favoritos</Text>
           </View>
         </TouchableOpacity>
+
         <TouchableOpacity onPress={() => setSelectedTab("Entrar")}>
           <View style={styles.footerBox}>
-            <Image
-              source={userIcon}
-              style={
-                selectedTab === "Entrar"
-                  ? styles.footerUserIconRed
-                  : styles.footerUserIcon
-              }
-            />
-            <Text
-              style={
-                selectedTab === "Entrar"
-                  ? styles.footerTextRedColor
-                  : styles.footerText
-              }
-            >
-              Entrar
-            </Text>
+            <Image source={userIcon} style={selectedTab === "Entrar" ? styles.footerUserIconRed : styles.footerUserIcon}/>
+            <Text style={selectedTab === "Entrar" ? styles.footerTextRedColor : styles.footerText}>Entrar</Text>
           </View>
         </TouchableOpacity>
       </View>

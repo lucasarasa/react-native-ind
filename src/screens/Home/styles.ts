@@ -34,10 +34,10 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     marginVertical: 5,
     flexDirection: "row",
-    shadowColor: "#000", // Cor da sombra
-    shadowOpacity: 0.2, // Opacidade da sombra
-    shadowRadius: 3.5, // Raio da sombra (para iOS)
-    elevation: 5, // Sombras para Android
+    shadowColor: "#000",
+    shadowOpacity: 0.2,
+    shadowRadius: 3.5,
+    elevation: 5,
   },
   imageSearchIcon: {
     width: 19,
@@ -62,13 +62,13 @@ export const styles = StyleSheet.create({
     backgroundColor: "white",
     padding: 9,
     borderRadius: 50,
-    borderWidth: 1, // Valor intermediário para visibilidade
-    borderColor: "#979899", // Cor clara para borda mais suave
+    borderWidth: 1,
+    borderColor: "#979899",
     alignItems: "center",
-    // shadowColor: '#000',          // Cor da sombra
-    // shadowOpacity: 10,           // Opacidade da sombra
-    // shadowRadius: 3,             // Raio da sombra (para iOS)
-    // elevation: 5,                  // Sombras para Android
+    // shadowColor: '#000',
+    // shadowOpacity: 10,
+    // shadowRadius: 3,
+    // elevation: 5,
   },
   menuHam: {
     width: 17,
@@ -122,10 +122,10 @@ export const styles = StyleSheet.create({
   },
   mainPagBox: {
     marginTop: 30,
-    shadowColor: "#000", // Cor da sombra
-    shadowOpacity: 0.6, // Opacidade da sombra
-    shadowRadius: 2, // Raio da sombra (para iOS)
-    elevation: 5, // Sombras para Android
+    shadowColor: "#000",
+    shadowOpacity: 0.6,
+    shadowRadius: 2,
+    elevation: 5,
     width: "85%",
     borderRadius: 10,
     paddingTop: 10,
@@ -155,8 +155,8 @@ export const styles = StyleSheet.create({
   mainPageHomes: {
     width: 320,
     height: 320,
-    borderRadius: 10, // Define o arredondamento da borda
-    overflow: "hidden", // Garante que a imagem respeite o arredondamento
+    borderRadius: 10,
+    overflow: "hidden",
     marginTop: 30,
     justifyContent: "space-between",
   },
@@ -196,10 +196,10 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     // borderTopColor: 'black',
     // borderTopWidth: 1,
-    shadowColor: "#000", // Cor da sombra
-    shadowOpacity: 0.5, // Opacidade da sombra
-    shadowRadius: 1, // Raio da sombra (para iOS)
-    elevation: 5, // Sombras para Android
+    shadowColor: "#000",
+    shadowOpacity: 0.5,
+    shadowRadius: 1, 
+    elevation: 5,
     alignItems: "center",
     justifyContent: "center",
     gap: 30,
