@@ -24,6 +24,7 @@ const { width } = Dimensions.get("window");
 
 export const Page = () => {
 
+    const [like, setLike] = useState('Unlike');
     const [currentPage, setCurrentPage] = useState(1);
     const navigation = useNavigation<NavigationProp>();
     
@@ -34,7 +35,11 @@ export const Page = () => {
 
     const navigateToHome = () => {
         navigation.navigate('Home');  // Navega para a página 'Home'
-      }
+    }
+
+    const toggleLike = () => {
+        setLike(prevLike => (prevLike === 'Like' ? 'Unlike' : 'Like'));
+    }
 
     return (
         <View style={styles.container}>
@@ -62,9 +67,9 @@ export const Page = () => {
                     <View style={styles.topPagRightBackgroundImage}>
                     <Image source={upload} style={styles.topPagIcons}/>
                     </View>
-                    <View style={styles.topPagRightBackgroundImage}>
-                    <Image source={heart} style={styles.topPagIcons}/>
-                    </View>
+                    <TouchableOpacity onPress={toggleLike} style={styles.topPagRightBackgroundImage}>
+                    <Image source={heart} style={like === 'Like' ? styles.topPagIconsHeartRed :  styles.topPagIconsHeart}/>
+                    </TouchableOpacity>
                 </View>
             </View>
             <View style={styles.bottomPag}>

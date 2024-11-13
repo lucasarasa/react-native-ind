@@ -206,22 +206,37 @@ export const styles = StyleSheet.create({
     footerSearchIcon: {
         width: 22,
         height: 22,
-        tintColor: 'red'
+        tintColor: 'gray'
     },
-    footerTextRed: {
-        color: 'red'
+    footerSearchIconRed: {
+        width: 22,
+        height: 22,
+        tintColor: 'red'
     },
     footerHeartIcon: {
         width: 22,
         height: 22,
         tintColor: 'gray'
     },
+    footerHeartIconRed: {
+        width: 22,
+        height: 22,
+        tintColor: 'red'
+    },
     footerUserIcon: {
         width: 22,
         height: 22,
         tintColor: 'gray'
     },
+    footerUserIconRed: {
+        width: 22,
+        height: 22,
+        tintColor: 'red'
+    },
     footerText: {
         color: 'gray'
+    },
+    footerTextRedColor: {
+        color: 'red'
     }
 });

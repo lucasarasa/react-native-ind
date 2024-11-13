@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -25,6 +25,7 @@ type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Home'>;
 
 export const Home = () => {
 
+  const [selectedTab, setSelectedTab] = useState('Explorar');
   const navigation = useNavigation<HomeScreenNavigationProp>(); // Tipando o hook de navegação
 
   const navigateToAnotherPage = () => {
@@ -99,18 +100,24 @@ export const Home = () => {
       </View>
 
       <View style={styles.footer}>
+        <TouchableOpacity onPress={() => setSelectedTab ('Explorar')}>
+          <View style={styles.footerBox}>
+            <Image source={search} style={selectedTab === 'Explorar' ? styles.footerSearchIconRed : styles.footerSearchIcon}/>
+            <Text style={selectedTab === 'Explorar' ? styles.footerTextRedColor : styles.footerText}>Explorar</Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => setSelectedTab('Favoritos')}>
         <View style={styles.footerBox}>
-          <Image source={search} style={styles.footerSearchIcon}/>
-          <Text style={styles.footerTextRed}>Explorar</Text>
+          <Image source={heart} style={selectedTab === 'Favoritos' ? styles.footerHeartIconRed :  styles.footerHeartIcon}/>
+          <Text style={selectedTab === 'Favoritos' ? styles.footerTextRedColor : styles.footerText}>Favoritos</Text>
         </View>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => setSelectedTab('Entrar')}>
         <View style={styles.footerBox}>
-          <Image source={heart} style={styles.footerHeartIcon}/>
-          <Text style={styles.footerText}>Favoritos</Text>
+          <Image source={userIcon} style={selectedTab === 'Entrar' ? styles.footerUserIconRed :  styles.footerUserIcon}/>
+          <Text style={selectedTab === 'Entrar' ? styles.footerTextRedColor : styles.footerText}>Entrar</Text>
         </View>
-        <View style={styles.footerBox}>
-          <Image source={userIcon} style={styles.footerUserIcon}/>
-          <Text style={styles.footerText}>Entrar</Text>
-        </View>
+        </TouchableOpacity>
       </View>
     </View>
   );
