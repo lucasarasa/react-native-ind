@@ -5,6 +5,7 @@ import {
   Image,
   TouchableOpacity,
   ImageBackground,
+  TextInput,
 } from "react-native";
 import { styles } from "./styles";
 import menuHam from "../../../assets/definicoes.png";
@@ -21,17 +22,24 @@ import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParamList } from "../../navigation/types";
 
-type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Home'>;
+type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, "Home">;
 
 export const Home = () => {
-
-  const [selectedTab, setSelectedTab] = useState('Explorar');
+  const [placeholder, setPlaceholder] = useState("Para onde?\nQualqu... • Qualque... • Hóspe...");
+  const [selectedTab, setSelectedTab] = useState("Explorar");
   const navigation = useNavigation<HomeScreenNavigationProp>(); // Tipando o hook de navegação
 
   const navigateToAnotherPage = () => {
-    navigation.navigate('Page'); // Navegar para a outra página
+    navigation.navigate("Page"); // Navegar para a outra página
   };
 
+  const handleFocus = () => {
+    setPlaceholder('');  // Limpa o placeholder quando o campo recebe foco
+  };
+
+  const handleBlur = () => {
+    setPlaceholder("Para onde?\nQualq... • Qualqu... • Hóspe...");  // Restaura o placeholder quando o campo perde foco
+  };
 
   return (
     <View style={styles.container}>
@@ -42,10 +50,13 @@ export const Home = () => {
               <Image source={search} style={styles.imageSearchIcon} />
             </View>
             <View style={styles.searchText}>
-              <Text style={styles.textTitle}>Para onde?</Text>
-              <Text style={styles.textPar}>
-                Qualquer lugar • Qualquer se... • Hóspedes?
-              </Text>
+              <TextInput
+                style={styles.textTitle}
+                placeholder={placeholder}
+                multiline
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+              />
             </View>
           </View>
           <View style={styles.searchHam}>
@@ -76,49 +87,97 @@ export const Home = () => {
         <View style={styles.mainPagBox}>
           <View style={styles.mainPagBoxLeft}>
             <Text style={styles.textMainPage}>Mostrar preço total</Text>
-            <Text style={styles.textMainPageTwo}>Inclui todas as taxas, sem impostos</Text>
+            <Text style={styles.textMainPageTwo}>
+              Inclui todas as taxas, sem impostos
+            </Text>
           </View>
           <View>
             <Image source={iconButton} style={styles.buttonMainPage} />
           </View>
         </View>
         <TouchableOpacity onPress={navigateToAnotherPage}>
-          <ImageBackground source={frentePraiaFoto} style={styles.mainPageHomes}>
+          <ImageBackground
+            source={frentePraiaFoto}
+            style={styles.mainPageHomes}
+          >
             <View style={styles.mainPageHomesHeader}>
               <Text style={styles.textMainPagePreferHosp}>
                 Preferido dos hóspedes
               </Text>
-              <Image source={heart} style={styles.imageMainPagePreferHosp}/>
+              <Image source={heart} style={styles.imageMainPagePreferHosp} />
             </View>
             <View style={styles.mainPageReticencias}>
-              <Text style={styles.mainPageReticenciasText}>
-              • • • • •
-              </Text>
+              <Text style={styles.mainPageReticenciasText}>• • • • •</Text>
             </View>
           </ImageBackground>
         </TouchableOpacity>
       </View>
 
       <View style={styles.footer}>
-        <TouchableOpacity onPress={() => setSelectedTab ('Explorar')}>
+        <TouchableOpacity onPress={() => setSelectedTab("Explorar")}>
           <View style={styles.footerBox}>
-            <Image source={search} style={selectedTab === 'Explorar' ? styles.footerSearchIconRed : styles.footerSearchIcon}/>
-            <Text style={selectedTab === 'Explorar' ? styles.footerTextRedColor : styles.footerText}>Explorar</Text>
+            <Image
+              source={search}
+              style={
+                selectedTab === "Explorar"
+                  ? styles.footerSearchIconRed
+                  : styles.footerSearchIcon
+              }
+            />
+            <Text
+              style={
+                selectedTab === "Explorar"
+                  ? styles.footerTextRedColor
+                  : styles.footerText
+              }
+            >
+              Explorar
+            </Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => setSelectedTab('Favoritos')}>
-        <View style={styles.footerBox}>
-          <Image source={heart} style={selectedTab === 'Favoritos' ? styles.footerHeartIconRed :  styles.footerHeartIcon}/>
-          <Text style={selectedTab === 'Favoritos' ? styles.footerTextRedColor : styles.footerText}>Favoritos</Text>
-        </View>
+        <TouchableOpacity onPress={() => setSelectedTab("Favoritos")}>
+          <View style={styles.footerBox}>
+            <Image
+              source={heart}
+              style={
+                selectedTab === "Favoritos"
+                  ? styles.footerHeartIconRed
+                  : styles.footerHeartIcon
+              }
+            />
+            <Text
+              style={
+                selectedTab === "Favoritos"
+                  ? styles.footerTextRedColor
+                  : styles.footerText
+              }
+            >
+              Favoritos
+            </Text>
+          </View>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => setSelectedTab('Entrar')}>
-        <View style={styles.footerBox}>
-          <Image source={userIcon} style={selectedTab === 'Entrar' ? styles.footerUserIconRed :  styles.footerUserIcon}/>
-          <Text style={selectedTab === 'Entrar' ? styles.footerTextRedColor : styles.footerText}>Entrar</Text>
-        </View>
+        <TouchableOpacity onPress={() => setSelectedTab("Entrar")}>
+          <View style={styles.footerBox}>
+            <Image
+              source={userIcon}
+              style={
+                selectedTab === "Entrar"
+                  ? styles.footerUserIconRed
+                  : styles.footerUserIcon
+              }
+            />
+            <Text
+              style={
+                selectedTab === "Entrar"
+                  ? styles.footerTextRedColor
+                  : styles.footerText
+              }
+            >
+              Entrar
+            </Text>
+          </View>
         </TouchableOpacity>
       </View>
     </View>
   );
-}
+};
