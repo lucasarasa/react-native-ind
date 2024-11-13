@@ -204,44 +204,44 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     gap: 30,
   },
-  footerBox: {
-    // borderWidth: 1,
-    alignItems: "center",
-  },
-  footerSearchIcon: {
-    width: 22,
-    height: 22,
-    tintColor: "gray",
-  },
-  footerSearchIconRed: {
-    width: 22,
-    height: 22,
-    tintColor: "red",
-  },
-  footerHeartIcon: {
-    width: 22,
-    height: 22,
-    tintColor: "gray",
-  },
-  footerHeartIconRed: {
-    width: 22,
-    height: 22,
-    tintColor: "red",
-  },
-  footerUserIcon: {
-    width: 22,
-    height: 22,
-    tintColor: "gray",
-  },
-  footerUserIconRed: {
-    width: 22,
-    height: 22,
-    tintColor: "red",
-  },
-  footerText: {
-    color: "gray",
-  },
-  footerTextRedColor: {
-    color: "red",
-  },
+  // footerBox: {
+  //   // borderWidth: 1,
+  //   alignItems: "center",
+  // },
+  // footerSearchIcon: {
+  //   width: 22,
+  //   height: 22,
+  //   tintColor: "gray",
+  // },
+  // footerSearchIconRed: {
+  //   width: 22,
+  //   height: 22,
+  //   tintColor: "red",
+  // },
+  // footerHeartIcon: {
+  //   width: 22,
+  //   height: 22,
+  //   tintColor: "gray",
+  // },
+  // footerHeartIconRed: {
+  //   width: 22,
+  //   height: 22,
+  //   tintColor: "red",
+  // },
+  // footerUserIcon: {
+  //   width: 22,
+  //   height: 22,
+  //   tintColor: "gray",
+  // },
+  // footerUserIconRed: {
+  //   width: 22,
+  //   height: 22,
+  //   tintColor: "red",
+  // },
+  // footerText: {
+  //   color: "gray",
+  // },
+  // footerTextRedColor: {
+  //   color: "red",
+  // },
 });

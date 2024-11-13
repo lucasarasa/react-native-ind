@@ -21,6 +21,7 @@ import search from "../../../assets/search.png";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParamList } from "../../navigation/types";
+import FooterItem from "../../components/footer/ComponentFooter";
 
 type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, "Home">;
 
@@ -111,26 +112,24 @@ export const Home = () => {
       </View>
 
       <View style={styles.footer}>
-        <TouchableOpacity onPress={() => setSelectedTab("Explorar")}>
-          <View style={styles.footerBox}>
-            <Image source={search} style={selectedTab === "Explorar" ? styles.footerSearchIconRed : styles.footerSearchIcon}/>
-            <Text style={selectedTab === "Explorar"? styles.footerTextRedColor : styles.footerText}>Explorar</Text>
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => setSelectedTab("Favoritos")}>
-          <View style={styles.footerBox}>
-            <Image source={heart} style={selectedTab === "Favoritos" ? styles.footerHeartIconRed : styles.footerHeartIcon}/>
-            <Text style={selectedTab === "Favoritos" ? styles.footerTextRedColor : styles.footerText}>Favoritos</Text>
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => setSelectedTab("Entrar")}>
-          <View style={styles.footerBox}>
-            <Image source={userIcon} style={selectedTab === "Entrar" ? styles.footerUserIconRed : styles.footerUserIcon}/>
-            <Text style={selectedTab === "Entrar" ? styles.footerTextRedColor : styles.footerText}>Entrar</Text>
-          </View>
-        </TouchableOpacity>
+        <FooterItem
+          icon={search}
+          text="Explorar"
+          selectedTab={selectedTab}
+          setSelectedTab={setSelectedTab}
+        />
+        <FooterItem
+          icon={heart}
+          text="Favoritos"
+          selectedTab={selectedTab}
+          setSelectedTab={setSelectedTab}
+        />
+        <FooterItem
+          icon={userIcon}
+          text="Entrar"
+          selectedTab={selectedTab}
+          setSelectedTab={setSelectedTab}
+        />
       </View>
     </View>
   );
